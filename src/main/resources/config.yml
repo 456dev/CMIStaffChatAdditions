@@ -1,0 +1,49 @@
+# A list of handlers with their config options
+#
+# placeholders
+# ${sendername}, ${senderuuid}, ${message}, ${isotime}
+
+# Each handler can Appear multiple times
+handlers:
+  # Send a message to Console using the plugin's logger
+  # CMI auto logs to console, so in most cases this is not needed
+#  - type: consolemsg
+#    format: "msgint: from:'${sendername}' msg:'${message}'"
+
+  # Logs all messages to a file in the plugins folder
+  - type: logfile
+    # the format of each line in the log file
+    logline-format: "${isotime} - ${senderuuid} \"${sendername}\": \"${message}\""
+    # the file to save the log in
+    filename-format: "staffmsglog.txt"
+
+  # Sends all staffchat messages to a discord webhook
+#  - type: discordwebhook
+#    webhook-url: "[REPLACEME]"
+#    msg-format: |
+#      StaffMsg:
+#      from:'${sendername}'
+#      msg:'${message}'
+#    name-format: "${sendername}"
+#    avatarurl-format: "https://mc-heads.net/head/${sendername}/256"
+
+  # Runs a command in console when a staffmsg occurs
+#  - type: consolecommand
+#    command: "say this command is run in console"
+
+  # Sends the message to a discord SRV channel. another named channels needs to be setup in your discord srv config
+#  - type: discordsrv
+#    format: |
+#      StaffMsg:
+#      from:'${sendername}'
+#      msg:'${message}'
+#    # The Channel name, as in discord srv's config. !!NOT THE CHANNEL NAME ON DISCORD!!
+#    channel: "staffchat"
+
+  # Sends the message to a slack webhook
+#  - type: slackwebhook
+#    webhook-url: "[REPLACEME]"
+#    msg-format: |
+#      StaffMsg:
+#      from:'${sendername}'
+#      msg:'${message}'
