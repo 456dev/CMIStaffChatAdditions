@@ -6,7 +6,7 @@ depend: [ CMI ]
 softdepend:
   - DiscordSRV
 authors: [ The456gamer ]
-description: 456staffchat paper plugin connector
+description: Additions for CMI Staff Chat
 commands:
   cmistaffchatadditionsreload:
     permission: "cmistaffchatadditions.reloadconfig"
