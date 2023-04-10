@@ -24,7 +24,7 @@ public class staffmsg implements com.Zrips.CMI.commands.Cmd {
 
     // CMI has special cases for [on, off, toggle] when the sender is a player, resulting in no staff messages sent
     if (!((commandSender instanceof Player) && (strArgs.equalsIgnoreCase("on")
-        || strArgs.equalsIgnoreCase("off") || strArgs.equalsIgnoreCase("toggle")))) {
+        || strArgs.equalsIgnoreCase("off") || strArgs.equalsIgnoreCase("toggle") || strArgs.equalsIgnoreCase("")))) {
       // otherwise, go over the handlers
       for (MsgHandler handler : StaffChatPlugin.getInstance().getMsgHandlers()) {
         try {

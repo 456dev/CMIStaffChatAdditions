@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'dev.the456gamer'
-version = '1.0.0'
+version = '1.0.1'
 
 
 repositories {
@@ -68,4 +68,6 @@ tasks {
 
 shadowJar {
     relocate 'org.apache.commons', 'dev.the456gamer.shadow.apachecommons'
+    exclude 'META-INF/LICENSE.txt'
+
 }
